@@ -1,0 +1,68 @@
+{
+    "name": "satos04/twitch-analytics",
+    "description": "REST API that exposes Twitch analytics (categories search and top games stats) behind JWT authentication.",
+    "keywords": [
+        "twitch",
+        "api",
+        "lumen",
+        "hexagonal-architecture",
+        "jwt"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jon Satóstegui",
+            "email": "jsatosteguir@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "firebase/php-jwt": "^7.0",
+        "laravel/lumen-framework": "^11.0",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "mockery/mockery": "^1.4.4",
+        "phpmd/phpmd": "^2.5",
+        "phpro/grumphp": "^2.19",
+        "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^10.0",
+        "squizlabs/php_codesniffer": "^3.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Domain\\": "Domain/",
+            "Application\\": "Application/",
+            "Infrastructure\\": "Infrastructure/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse",
+        "test": "phpunit",
+        "lint": "php-cs-fixer fix --dry-run --diff",
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

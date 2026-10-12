@@ -1,0 +1,13 @@
+/vendor
+/.idea
+/.vscode
+.env
+.env.*
+!.env.example
+!.env.docker.example
+*.bin
+*.log
+.phpunit.result.cache
+.php-cs-fixer.cache
+/coverage
+/storage/framework/cache/phpstan

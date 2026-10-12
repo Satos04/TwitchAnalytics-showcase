@@ -1,0 +1,13 @@
+parameters:
+    level: 5
+    paths:
+        - Domain/
+        - Application/
+        - Infrastructure/
+        - app/
+    excludePaths:
+        - tests/
+        - vendor/
+    tmpDir: storage/framework/cache/phpstan
+    scanFiles:
+        - vendor/laravel/lumen-framework/src/helpers.php

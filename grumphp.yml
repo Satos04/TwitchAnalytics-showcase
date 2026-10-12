@@ -1,0 +1,33 @@
+grumphp:
+    tasks:
+        git_commit_message:
+            allow_empty_message: false
+            enforce_capitalized_subject: false
+            enforce_no_subject_trailing_period: true
+            enforce_single_lined_subject: true
+            skip_on_merge_commit: true
+            max_subject_width: 80
+            matchers:
+                'Format: [#issue] - Message': '/^\[#[0-9]+\] - [A-Z].*/'
+            case_insensitive: false
+            multiline: true
+        phpcs:
+            standard: PSR12
+            ignore_patterns: ['tests/']
+            triggered_by: [php]
+        phpcsfixer:
+            config: .php-cs-fixer.dist.php
+            triggered_by: [php]
+            allow_risky: true
+        phpmd:
+            ruleset: ['phpmd.xml']
+            exclude: ['tests/']
+            triggered_by: [php]
+        phpstan:
+            configuration: phpstan.neon
+            level: 5
+            use_grumphp_paths: false
+            memory_limit: 2G
+        phpunit:
+            config_file: phpunit.xml
+            always_execute: true
